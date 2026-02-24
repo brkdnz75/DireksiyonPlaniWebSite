@@ -7,3 +7,6 @@ dist-ssr
 .env.production
 .vs/
 .tmp-tailwind.css
+
+.vercel
+.env*.local
