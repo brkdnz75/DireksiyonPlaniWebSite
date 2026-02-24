@@ -27,7 +27,7 @@ export default function Home() {
     vehicles: '/screens/araclar.png',
     institutionSettings: '/screens/kurum-ayarlari.png',
     instructorMobile: '/screens/egitmen-mobil-ders-takibi.png',
-    studentPortal: '/screens/ogrenci-paneli-ders-takibi.png',
+    studentPortal: '/screens/ogrenci-paneli-ders.png',
   } as const
 
   const features = [
