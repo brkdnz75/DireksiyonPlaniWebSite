@@ -1,0 +1,20 @@
+﻿[
+    {
+        "id":  1771416948340,
+        "name":  "Test Kullanıcı",
+        "courseName":  "ABC Sürücü Kursu",
+        "phone":  "05001234567",
+        "email":  "test@test.com",
+        "message":  "Test mesajı",
+        "createdAt":  "2026-02-18T12:15:48.340Z"
+    },
+    {
+        "id":  1771418848176,
+        "name":  "DENİZ",
+        "courseName":  "ÖZGÜR",
+        "phone":  "05557238883",
+        "email":  "ozguriks@hotmail.com",
+        "message":  "deneme şeysi istiyorum",
+        "createdAt":  "2026-02-18T12:47:28.176Z"
+    }
+]

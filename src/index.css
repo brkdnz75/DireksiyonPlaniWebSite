@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-deep: #0f3f9f;
+    --brand-main: #1f58c7;
+    --brand-soft: #2f74ef;
+  }
+
+  body {
+    @apply font-sans text-gray-900 antialiased;
+    background:
+      radial-gradient(1200px 420px at 20% -10%, rgba(31, 88, 199, 0.16), transparent 60%),
+      radial-gradient(1000px 360px at 100% 0%, rgba(47, 116, 239, 0.14), transparent 60%),
+      #f7faff;
+  }
+
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+    font-family: 'Sora', 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: rgba(31, 88, 199, 0.22);
+    color: #0f2e6f;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply py-20 px-4;
+  }
+
+  .panel-card {
+    @apply rounded-2xl border border-primary/15 bg-white/90 shadow-[0_18px_40px_rgba(20,44,94,0.08)] backdrop-blur-sm;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-primary to-secondary px-8 py-3 font-semibold text-white ring-1 ring-primary/20 transition-all duration-300 shadow-[0_10px_24px_rgba(31,88,199,0.35)] hover:translate-y-[-1px] hover:shadow-[0_14px_30px_rgba(31,88,199,0.45)];
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-primary/30 bg-white/85 px-8 py-3 font-semibold text-primary transition-all duration-300 hover:bg-primary/10 hover:border-primary/55;
+  }
+
+  .section-title {
+    @apply mb-4 text-4xl font-bold text-[#0f2e6f] md:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mb-12 text-xl text-slate-600;
+  }
+
+  .screenshot-card {
+    @apply panel-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_46px_rgba(20,44,94,0.13)];
+  }
+}
