@@ -179,15 +179,17 @@ export default function Home() {
                 </h1>
                 <div className="relative pl-5">
                   <div className="absolute left-0 top-1 h-[calc(100%-8px)] w-1 rounded-full bg-gradient-to-b from-primary to-secondary" />
-                  <p
-                    className={`text-lg sm:text-xl text-slate-700 leading-relaxed min-h-[120px] md:min-h-[136px] transition-all duration-500 ${
-                      isHeroSlideVisible
-                        ? 'opacity-100 translate-y-0 blur-0'
-                        : 'opacity-0 -translate-y-1 blur-[2px]'
-                    }`}
-                  >
-                    {currentHeroSlide.text}
-                  </p>
+                  <div className="min-h-[120px] md:min-h-[136px] flex items-center">
+                    <p
+                      className={`text-lg sm:text-xl text-slate-700 leading-relaxed transition-all duration-500 ${
+                        isHeroSlideVisible
+                          ? 'opacity-100 translate-y-0 blur-0'
+                          : 'opacity-0 -translate-y-1 blur-[2px]'
+                      }`}
+                    >
+                      {currentHeroSlide.text}
+                    </p>
+                  </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact" className="btn-primary text-center">

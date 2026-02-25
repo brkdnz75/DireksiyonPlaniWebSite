@@ -1,5 +1,5 @@
 ﻿import { Link } from 'react-router-dom'
-import { Mail, Phone, Instagram, Youtube } from 'lucide-react'
+import { Mail, Phone, Instagram, Youtube, Facebook } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -19,13 +19,17 @@ export default function Footer() {
               Direksiyon derslerinizi dijitalleştirin.
             </p>
             <div className="flex space-x-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/direksiyonplani/" target="_blank" rel="noopener noreferrer"
                  className="text-blue-100/75 hover:text-white transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.youtube.com/channel/UCSkwxojgSZR8Zr9-eWGvodw" target="_blank" rel="noopener noreferrer"
                  className="text-blue-100/75 hover:text-white transition-colors">
                 <Youtube className="h-6 w-6" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61588536311091" target="_blank" rel="noopener noreferrer"
+                 className="text-blue-100/75 hover:text-white transition-colors">
+                <Facebook className="h-6 w-6" />
               </a>
             </div>
           </div>

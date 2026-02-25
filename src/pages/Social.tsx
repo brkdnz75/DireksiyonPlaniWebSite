@@ -1,36 +1,36 @@
-﻿import { Instagram, Youtube, ExternalLink } from 'lucide-react'
+﻿import { Instagram, Youtube, Facebook, ExternalLink } from 'lucide-react'
 
 export default function Social() {
   const instagramPosts = [
     {
       image: 'https://via.placeholder.com/400x400/0891b2/ffffff?text=Post+1',
       caption: 'Yeni özelliklerimizi keşfedin!',
-      link: 'https://instagram.com/direksiyonplani'
+      link: 'https://www.instagram.com/direksiyonplani/'
     },
     {
       image: 'https://via.placeholder.com/400x400/06b6d4/ffffff?text=Post+2',
       caption: 'Müşteri başarı hikayeleri',
-      link: 'https://instagram.com/direksiyonplani'
+      link: 'https://www.instagram.com/direksiyonplani/'
     },
     {
       image: 'https://via.placeholder.com/400x400/0891b2/ffffff?text=Post+3',
       caption: 'Kullanım ipuçları',
-      link: 'https://instagram.com/direksiyonplani'
+      link: 'https://www.instagram.com/direksiyonplani/'
     },
     {
       image: 'https://via.placeholder.com/400x400/06b6d4/ffffff?text=Post+4',
       caption: 'Yeni güncelleme duyurusu',
-      link: 'https://instagram.com/direksiyonplani'
+      link: 'https://www.instagram.com/direksiyonplani/'
     },
     {
       image: 'https://via.placeholder.com/400x400/0891b2/ffffff?text=Post+5',
       caption: 'Eğitim içerikleri',
-      link: 'https://instagram.com/direksiyonplani'
+      link: 'https://www.instagram.com/direksiyonplani/'
     },
     {
       image: 'https://via.placeholder.com/400x400/06b6d4/ffffff?text=Post+6',
       caption: 'Sistem güncellemeleri',
-      link: 'https://instagram.com/direksiyonplani'
+      link: 'https://www.instagram.com/direksiyonplani/'
     }
   ]
 
@@ -44,7 +44,7 @@ export default function Social() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="rounded-2xl bg-gradient-to-br from-[#0f3f9f] to-primary p-12 text-white shadow-[0_20px_40px_rgba(20,44,94,0.28)]">
             <div className="flex items-center space-x-4 mb-6">
               <Instagram className="h-16 w-16" />
@@ -58,7 +58,7 @@ export default function Social() {
               Topluluğumuza katılın!
             </p>
             <a
-              href="https://instagram.com/direksiyonplani"
+              href="https://www.instagram.com/direksiyonplani/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 rounded-lg bg-white px-8 py-3 font-bold text-[#0f3f9f] transition-all duration-300 hover:bg-gray-100"
@@ -80,12 +80,34 @@ export default function Social() {
               Detaylı eğitim videoları, sistem tanıtımları ve canlı yayınlar için YouTube kanalımıza abone olun.
             </p>
             <a
-              href="https://youtube.com/@direksiyonplani"
+              href="https://www.youtube.com/channel/UCSkwxojgSZR8Zr9-eWGvodw"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 rounded-lg bg-white px-8 py-3 font-bold text-primary transition-all duration-300 hover:bg-gray-100"
             >
               <span>Abone Ol</span>
+              <ExternalLink className="h-5 w-5" />
+            </a>
+          </div>
+
+          <div className="rounded-2xl bg-gradient-to-br from-[#153a83] to-[#2b5fb8] p-12 text-white shadow-[0_20px_40px_rgba(20,44,94,0.24)]">
+            <div className="flex items-center space-x-4 mb-6">
+              <Facebook className="h-16 w-16" />
+              <div>
+                <h2 className="text-3xl font-bold">Facebook</h2>
+                <p className="text-lg opacity-90">DireksiyonPlanı</p>
+              </div>
+            </div>
+            <p className="text-lg mb-8 opacity-90">
+              Duyurular, güncellemeler ve topluluk paylaşımları için Facebook sayfamızı takip edin.
+            </p>
+            <a
+              href="https://www.facebook.com/profile.php?id=61588536311091"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 rounded-lg bg-white px-8 py-3 font-bold text-[#153a83] transition-all duration-300 hover:bg-gray-100"
+            >
+              <span>Sayfayı Ziyaret Et</span>
               <ExternalLink className="h-5 w-5" />
             </a>
           </div>
@@ -123,9 +145,9 @@ export default function Social() {
             Son güncellemelerden haberdar olmak, diğer kullanıcılarla deneyim paylaşmak ve
             özel içeriklere erişmek için sosyal medya hesaplarımızı takip edin.
           </p>
-          <div className="flex justify-center space-x-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://instagram.com/direksiyonplani"
+              href="https://www.instagram.com/direksiyonplani/"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg bg-gradient-to-r from-[#0f3f9f] to-primary px-8 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg"
@@ -133,12 +155,20 @@ export default function Social() {
               Instagram'da Takip Et
             </a>
             <a
-              href="https://youtube.com/@direksiyonplani"
+              href="https://www.youtube.com/channel/UCSkwxojgSZR8Zr9-eWGvodw"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg bg-gradient-to-r from-primary to-secondary px-8 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg"
             >
               YouTube'da Abone Ol
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61588536311091"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-gradient-to-r from-[#153a83] to-[#2b5fb8] px-8 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg"
+            >
+              Facebook'ta Takip Et
             </a>
           </div>
         </div>

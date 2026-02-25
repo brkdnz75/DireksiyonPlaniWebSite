@@ -118,7 +118,7 @@ export default function Videos() {
               </div>
             </div>
             <a 
-              href="https://youtube.com/@direksiyonplani" 
+              href="https://www.youtube.com/channel/UCSkwxojgSZR8Zr9-eWGvodw" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300 whitespace-nowrap"

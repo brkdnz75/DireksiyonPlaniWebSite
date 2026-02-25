@@ -13,7 +13,10 @@ export default function Contact() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const timeoutRef = useRef<number | null>(null)
-  const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001').replace(/\/+$/, '')
+  const apiBaseUrl = (
+    import.meta.env.VITE_API_BASE_URL ||
+    (import.meta.env.DEV ? 'http://localhost:3001' : '')
+  ).replace(/\/+$/, '')
 
   useEffect(() => {
     return () => {
@@ -141,7 +144,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center space-x-3 text-gray-600">
                   <Phone className="h-5 w-5 text-primary" />
-                  <span>+90 (XXX) XXX XX XX</span>
+                  <span>+90 (555) 723 88 83</span>
                 </div>
               </div>
             </div>
