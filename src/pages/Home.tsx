@@ -146,6 +146,37 @@ export default function Home() {
     }
   }, [heroSlides.length])
 
+  const renderHeroMockup = () => (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() =>
+          setSelectedImage({
+            variant: 'laptop',
+            src: currentHeroSlide.image,
+            alt: `${currentHeroSlide.label} ekran görüntüsü`,
+            label: currentHeroSlide.label,
+            fit: 'cover',
+          })
+        }
+        className="w-full text-left"
+        aria-label={`${currentHeroSlide.label} detay görselini aç`}
+      >
+        <DeviceFrame variant="laptop">
+          <img
+            src={currentHeroSlide.image}
+            alt={`${currentHeroSlide.label} ekran görüntüsü`}
+            className={`w-full h-full object-cover transition-all duration-500 ${
+              isHeroSlideVisible ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-[1.02] blur-[2px]'
+            }`}
+          />
+        </DeviceFrame>
+      </button>
+      <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-primary/15 rounded-full blur-3xl -z-10" />
+      <div className="absolute -top-8 -left-8 w-40 h-40 bg-secondary/15 rounded-full blur-3xl -z-10" />
+    </div>
+  )
+
   const renderScreen = (item: ScreenItem) => (
     <button
       type="button"
@@ -177,6 +208,9 @@ export default function Home() {
                   <span className="text-primary block"> {'Akıllı Rezervasyon'} </span>
                   {'Yönetim Sistemi'}
                 </h1>
+                <div className="md:hidden">
+                  {renderHeroMockup()}
+                </div>
                 <div className="relative pl-5">
                   <div className="absolute left-0 top-1 h-[calc(100%-8px)] w-1 rounded-full bg-gradient-to-b from-primary to-secondary" />
                   <div className="min-h-[120px] md:min-h-[136px] flex items-center">
@@ -200,25 +234,8 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setSelectedImage({ variant: 'laptop', src: currentHeroSlide.image, alt: `${currentHeroSlide.label} ekran görüntüsü`, label: currentHeroSlide.label, fit: 'cover' })}
-                  className="w-full text-left"
-                  aria-label={`${currentHeroSlide.label} detay görselini aç`}
-                >
-                  <DeviceFrame variant="laptop">
-                    <img
-                      src={currentHeroSlide.image}
-                      alt={`${currentHeroSlide.label} ekran görüntüsü`}
-                      className={`w-full h-full object-cover transition-all duration-500 ${
-                        isHeroSlideVisible ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-[1.02] blur-[2px]'
-                      }`}
-                    />
-                  </DeviceFrame>
-                </button>
-                <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-primary/15 rounded-full blur-3xl -z-10" />
-                <div className="absolute -top-8 -left-8 w-40 h-40 bg-secondary/15 rounded-full blur-3xl -z-10" />
+              <div className="hidden md:block">
+                {renderHeroMockup()}
               </div>
             </div>
           </div>
@@ -307,6 +324,7 @@ export default function Home() {
             {activeTab === 'student' && (
               <div className="max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-10 items-start">
+                  <div className="screenshot-card">{renderScreen(studentShot)}</div>
                   <div className="space-y-6 py-8">
                     <h3 className="text-2xl font-bold text-gray-900">{'Öğrenci Paneli'}</h3>
                     <p className="text-gray-600">{'Öğrenciler kendi panellerinden tüm ders süreçlerini takip edebilir.'}</p>
@@ -324,7 +342,6 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                  <div className="screenshot-card">{renderScreen(studentShot)}</div>
                 </div>
               </div>
             )}
