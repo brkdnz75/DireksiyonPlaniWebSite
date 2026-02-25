@@ -13,10 +13,18 @@ export default function Contact() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const timeoutRef = useRef<number | null>(null)
-  const apiBaseUrl = (
-    import.meta.env.VITE_API_BASE_URL ||
-    (import.meta.env.DEV ? 'http://localhost:3001' : '')
-  ).replace(/\/+$/, '')
+  const configuredApiBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').trim()
+  const apiBaseUrl = (() => {
+    if (!configuredApiBaseUrl) {
+      return import.meta.env.DEV ? 'http://localhost:3001' : ''
+    }
+
+    try {
+      return new URL(configuredApiBaseUrl).toString().replace(/\/+$/, '')
+    } catch {
+      return import.meta.env.DEV ? 'http://localhost:3001' : ''
+    }
+  })()
 
   useEffect(() => {
     return () => {
