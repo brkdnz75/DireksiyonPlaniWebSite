@@ -59,7 +59,7 @@ export default function HowItWorks() {
             >
               <div className="flex-1">
                 <div className="relative">
-                  <div className="absolute -top-6 -left-6 text-8xl font-bold text-primary/10">
+                  <div className="absolute -top-10 md:-top-12 -left-6 text-8xl font-bold text-primary/10">
                     {step.number}
                   </div>
                   <div className="relative bg-gradient-to-br from-primary to-secondary p-12 rounded-2xl shadow-[0_24px_44px_rgba(20,44,94,0.25)]">

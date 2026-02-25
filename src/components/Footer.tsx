@@ -49,14 +49,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2 text-blue-100/80">
                 <Phone className="h-4 w-4" />
-                <span>+90 (XXX) XXX XX XX</span>
+                <span>+90 (555) 723 88 83</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-blue-100/80">
-          <p>&copy; 2024 DireksiyonPlanı. Tüm hakları saklıdır.</p>
+          <p>&copy; 2026 DireksiyonPlanı. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>

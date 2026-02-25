@@ -14,9 +14,29 @@ type ScreenItem = {
   fit: ScreenFit
 }
 
+type HeroSlide = {
+  text: string
+  image: string
+  label: string
+}
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'admin' | 'instructor' | 'student'>('admin')
   const [selectedImage, setSelectedImage] = useState<ScreenItem | null>(null)
+  const [heroSlideIndex, setHeroSlideIndex] = useState(0)
+  const [isHeroSlideVisible, setIsHeroSlideVisible] = useState(true)
+
+  const heroSlides: HeroSlide[] = [
+    { text: 'Kursiyerlerinizi toplu olarak veya tek tek sisteme ekleyin.', image: '/screens/hero-01-kursiyer-ekleme.png', label: 'Kursiyer Ekleme' },
+    { text: 'Randevu oluşturun, iptal edin veya değiştirin.', image: '/screens/hero-02-randevu-yonetimi.png', label: 'Randevu Yönetimi' },
+    { text: 'Kursiyerlerin ders sayısı, parkur kullanım sayısı ve ders notları gibi detaylara ulaşın.', image: '/screens/hero-03-kursiyer-detaylari.png', label: 'Kursiyer Detayları' },
+    { text: 'Eğitmen ekleyin, izin takibi yapın ve ders kapama-açma işlemlerini gerçekleştirin.', image: '/screens/hero-04-egitmen-yonetimi.png', label: 'Eğitmen Yönetimi' },
+    { text: 'Sınava hazır olan, derslerini tamamlayan ve başarılı ya da başarısız olan kursiyerler için çeşitli filtreler ve raporlamalar kullanın.', image: '/screens/hero-05-filtre-ve-raporlama.png', label: 'Filtre ve Raporlama' },
+    { text: 'Ders limiti belirleyin ve limit aşımında uyarı alın.', image: '/screens/hero-06-ders-limitleri.png', label: 'Ders Limitleri' },
+    { text: 'Kursiyerlerinize otomatik WhatsApp ve SMS ile ders hatırlatmaları ve rezervasyon bilgileri gönderin.', image: '/screens/hero-07-whatsapp-sms.png', label: 'WhatsApp ve SMS' },
+    { text: 'Kursiyer memnuniyet anketi ile direksiyon derslerine dair olumlu veya olumsuz geri bildirimler alın.', image: '/screens/hero-08-memnuniyet-anketi.png', label: 'Memnuniyet Anketi' },
+    { text: 'Direksiyon dersi planlamasını dijitalleştirin. Kursiyer rezervasyonlarını oluşturun, eğitmen programlarını yönetin, otomatik SMS hatırlatmaları ile ders kaçırmayı sıfıra indirin.', image: '/screens/hero-09-akilli-yonetim.png', label: 'Akıllı Yönetim' },
+  ]
 
   const screenImages = {
     dashboard: '/screens/dashboard-yonetim-paneli.png',
@@ -94,6 +114,8 @@ export default function Home() {
     { key: 'student' as const, label: 'Öğrenci Ekranı' },
   ]
 
+  const currentHeroSlide = heroSlides[heroSlideIndex]
+
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -104,6 +126,25 @@ export default function Home() {
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [])
+
+  useEffect(() => {
+    let fadeTimeout: number | null = null
+
+    const interval = window.setInterval(() => {
+      setIsHeroSlideVisible(false)
+      fadeTimeout = window.setTimeout(() => {
+        setHeroSlideIndex((prev) => (prev + 1) % heroSlides.length)
+        setIsHeroSlideVisible(true)
+      }, 280)
+    }, 5200)
+
+    return () => {
+      window.clearInterval(interval)
+      if (fadeTimeout) {
+        window.clearTimeout(fadeTimeout)
+      }
+    }
+  }, [heroSlides.length])
 
   const renderScreen = (item: ScreenItem) => (
     <button
@@ -136,9 +177,18 @@ export default function Home() {
                   <span className="text-primary block"> {'Akıllı Rezervasyon'} </span>
                   {'Yönetim Sistemi'}
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  {'Direksiyon dersi planlamasını dijitalleştirin. Kursiyer rezervasyonlarını oluşturun, eğitmen programlarını yönetin, otomatik SMS hatırlatmaları ile ders kaçırmayı sıfıra indirin.'}
-                </p>
+                <div className="relative pl-5">
+                  <div className="absolute left-0 top-1 h-[calc(100%-8px)] w-1 rounded-full bg-gradient-to-b from-primary to-secondary" />
+                  <p
+                    className={`text-lg sm:text-xl text-slate-700 leading-relaxed min-h-[120px] md:min-h-[136px] transition-all duration-500 ${
+                      isHeroSlideVisible
+                        ? 'opacity-100 translate-y-0 blur-0'
+                        : 'opacity-0 -translate-y-1 blur-[2px]'
+                    }`}
+                  >
+                    {currentHeroSlide.text}
+                  </p>
+                </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact" className="btn-primary text-center">
                     {'Demo Talep Et'}
@@ -149,9 +199,20 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative">
-                <button type="button" onClick={() => setSelectedImage({ variant: 'laptop', src: screenImages.dashboard, alt: 'Yönetim paneli ana ekran görüntüsü', label: 'Yönetim Paneli', fit: 'cover' })} className="w-full text-left" aria-label="Yönetim paneli detay görselini aç">
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage({ variant: 'laptop', src: currentHeroSlide.image, alt: `${currentHeroSlide.label} ekran görüntüsü`, label: currentHeroSlide.label, fit: 'cover' })}
+                  className="w-full text-left"
+                  aria-label={`${currentHeroSlide.label} detay görselini aç`}
+                >
                   <DeviceFrame variant="laptop">
-                    <img src={screenImages.dashboard} alt="Yönetim paneli ana ekran görüntüsü" className="w-full h-full object-cover" />
+                    <img
+                      src={currentHeroSlide.image}
+                      alt={`${currentHeroSlide.label} ekran görüntüsü`}
+                      className={`w-full h-full object-cover transition-all duration-500 ${
+                        isHeroSlideVisible ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-[1.02] blur-[2px]'
+                      }`}
+                    />
                   </DeviceFrame>
                 </button>
                 <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-primary/15 rounded-full blur-3xl -z-10" />
@@ -305,13 +366,18 @@ export default function Home() {
           <button
             type="button"
             onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 rounded-full bg-white/15 p-2 text-white hover:bg-white/25"
+            className="absolute right-4 top-4 z-20 rounded-full bg-white/15 p-2 text-white backdrop-blur-sm hover:bg-white/25"
             aria-label="Detayı kapat"
           >
             <X className="h-6 w-6" />
           </button>
 
-          <button type="button" className="absolute inset-0" onClick={() => setSelectedImage(null)} aria-label="Detayı kapat" />
+          <button
+            type="button"
+            className="absolute inset-0 z-0"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Detayı kapat"
+          />
 
           <div className="relative z-10 h-full w-full flex flex-col items-center justify-center gap-4">
             <p className="text-white text-lg font-semibold">{selectedImage.label}</p>
@@ -326,4 +392,3 @@ export default function Home() {
     </>
   )
 }
-
