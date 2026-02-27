@@ -41,7 +41,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between gap-3">
+        <div className="hidden md:flex h-20 items-center justify-between gap-3">
           <Link
             to="/"
             className={`flex items-center rounded-2xl border p-1.5 pr-3 ${
@@ -135,46 +135,37 @@ export default function Navbar() {
               {ctaLabel}
             </Link>
           </div>
+        </div>
 
-          <div className="md:hidden flex items-center gap-2">
-            <div
-              className={`shrink-0 inline-flex items-center gap-1 whitespace-nowrap rounded-xl p-1 ${
-                isDark ? 'bg-slate-900/90' : 'bg-white/80 border border-[#1f58c7]/15'
+        <div className="md:hidden py-3 space-y-2">
+          <div className="flex items-center gap-2">
+            <Link
+              to="/"
+              className={`min-w-0 flex-1 flex items-center rounded-2xl border p-1.5 pr-2 ${
+                isDark
+                  ? 'border-sky-300/20 bg-gradient-to-br from-sky-400/15 to-blue-500/10'
+                  : 'border-[#1f58c7]/20 bg-gradient-to-br from-[#1f58c7]/10 to-[#2f74ef]/5'
               }`}
             >
-              <button
-                type="button"
-                onClick={() => setLanguage('tr')}
-                className={`min-w-10 px-2 py-1 text-xs font-semibold rounded-lg transition ${
-                  language === 'tr'
-                    ? 'bg-primary text-white'
-                    : isDark
-                      ? 'text-slate-300 hover:bg-slate-800'
-                      : 'text-slate-600 hover:bg-slate-100'
+              <img
+                src="/screens/direksiyonplani-logo.png"
+                alt="DireksiyonPlanı"
+                className="h-8 w-auto object-contain"
+              />
+              <span
+                className={`text-[11px] font-semibold whitespace-nowrap truncate ${
+                  isDark ? 'text-sky-100' : 'text-[#123b90]'
                 }`}
               >
-                TR
-              </button>
-              <button
-                type="button"
-                onClick={() => setLanguage('en')}
-                className={`min-w-10 px-2 py-1 text-xs font-semibold rounded-lg transition ${
-                  language === 'en'
-                    ? 'bg-primary text-white'
-                    : isDark
-                      ? 'text-slate-300 hover:bg-slate-800'
-                      : 'text-slate-600 hover:bg-slate-100'
-                }`}
-              >
-                EN
-              </button>
-            </div>
+                DireksiyonPlanı
+              </span>
+            </Link>
 
             <button
               type="button"
               onClick={toggleTheme}
               aria-label={themeLabel}
-              className={`inline-flex h-10 w-10 items-center justify-center rounded-xl transition ${
+              className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition ${
                 isDark
                   ? 'bg-slate-900 text-sky-200 hover:bg-slate-800'
                   : 'bg-white border border-[#1f58c7]/20 text-[#1f58c7] hover:bg-[#1f58c7]/10'
@@ -185,7 +176,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`rounded-xl border p-2 ${
+              className={`rounded-xl border p-2 shrink-0 ${
                 isDark
                   ? 'border-sky-300/20 text-sky-200 hover:bg-sky-500/10'
                   : 'border-[#1f58c7]/20 text-[#1f58c7] hover:bg-[#1f58c7]/10'
@@ -195,6 +186,41 @@ export default function Navbar() {
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
+          </div>
+
+          <div className="flex justify-center">
+            <div
+              className={`inline-flex items-center gap-1 whitespace-nowrap rounded-xl p-1 ${
+                isDark ? 'bg-slate-900/90' : 'bg-white/80 border border-[#1f58c7]/15'
+              }`}
+            >
+            <button
+              type="button"
+              onClick={() => setLanguage('tr')}
+              className={`min-w-12 px-3 py-1 text-xs font-semibold rounded-lg transition ${
+                language === 'tr'
+                  ? 'bg-primary text-white'
+                  : isDark
+                    ? 'text-slate-300 hover:bg-slate-800'
+                    : 'text-slate-600 hover:bg-slate-100'
+              }`}
+            >
+              TR
+            </button>
+              <button
+                type="button"
+                onClick={() => setLanguage('en')}
+                className={`min-w-12 px-3 py-1 text-xs font-semibold rounded-lg transition ${
+                  language === 'en'
+                    ? 'bg-primary text-white'
+                    : isDark
+                      ? 'text-slate-300 hover:bg-slate-800'
+                      : 'text-slate-600 hover:bg-slate-100'
+                }`}
+              >
+                EN
+              </button>
+            </div>
           </div>
         </div>
       </div>
