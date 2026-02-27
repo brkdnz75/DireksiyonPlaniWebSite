@@ -137,11 +137,15 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden flex items-center gap-2">
-            <div className={`rounded-xl p-1 ${isDark ? 'bg-slate-900/90' : 'bg-white/80 border border-[#1f58c7]/15'}`}>
+            <div
+              className={`shrink-0 inline-flex items-center gap-1 whitespace-nowrap rounded-xl p-1 ${
+                isDark ? 'bg-slate-900/90' : 'bg-white/80 border border-[#1f58c7]/15'
+              }`}
+            >
               <button
                 type="button"
                 onClick={() => setLanguage('tr')}
-                className={`px-2 py-1 text-xs font-semibold rounded-lg transition ${
+                className={`min-w-10 px-2 py-1 text-xs font-semibold rounded-lg transition ${
                   language === 'tr'
                     ? 'bg-primary text-white'
                     : isDark
@@ -154,7 +158,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                className={`px-2 py-1 text-xs font-semibold rounded-lg transition ${
+                className={`min-w-10 px-2 py-1 text-xs font-semibold rounded-lg transition ${
                   language === 'en'
                     ? 'bg-primary text-white'
                     : isDark

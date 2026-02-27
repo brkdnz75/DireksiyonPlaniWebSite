@@ -36,9 +36,8 @@ const getInitialPreferences = (): { theme: ThemeMode; language: LanguageMode } =
     }
   }
 
-  const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
   return {
-    theme: prefersDark ? 'dark' : 'light',
+    theme: 'light',
     language: 'tr',
   }
 }
@@ -88,4 +87,3 @@ export function useAppPreferences() {
   }
   return context
 }
-
