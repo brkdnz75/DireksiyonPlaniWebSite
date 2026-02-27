@@ -2,7 +2,7 @@ export function DashboardScreen() {
   return (
     <div className="w-full h-full bg-gray-50 flex flex-col text-[8px]">
       <div className="bg-primary px-3 py-1.5 flex items-center justify-between">
-        <span className="text-white font-bold text-[10px]">DireksiyonPlanı</span>
+        <span className="text-white font-bold text-[10px]">DireksiyonPlan1</span>
         <div className="flex gap-2">
           <div className="w-8 h-1.5 bg-white/30 rounded" />
           <div className="w-8 h-1.5 bg-white/30 rounded" />
@@ -11,17 +11,17 @@ export function DashboardScreen() {
       </div>
       <div className="flex flex-1 min-h-0">
         <div className="w-14 bg-white border-r border-gray-200 py-2 px-1 space-y-1.5 hidden sm:block">
-          {['Anasayfa', 'Takvim', 'Kursiyerler', 'Eğitmenler', 'SMS'].map((item) => (
+          {['Anasayfa', 'Takvim', 'Kursiyerler', 'Eitmenler', 'SMS'].map((item) => (
             <div key={item} className="px-1 py-0.5 rounded text-gray-500 truncate">{item}</div>
           ))}
         </div>
         <div className="flex-1 p-2 space-y-2 overflow-hidden">
           <div className="flex items-center justify-between">
-            <span className="font-semibold text-gray-700 text-[9px]">Haftalık Takvim</span>
+            <span className="font-semibold text-gray-700 text-[9px]">Haftal1k Takvim</span>
             <div className="w-12 h-3 bg-primary/10 rounded" />
           </div>
           <div className="grid grid-cols-7 gap-0.5">
-            {['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'].map((day) => (
+            {['Pzt', 'Sal', '�ar', 'Per', 'Cum', 'Cmt', 'Paz'].map((day) => (
               <div key={day} className="text-center text-gray-400 text-[6px] font-medium">{day}</div>
             ))}
             {Array.from({ length: 28 }).map((_, i) => {
@@ -38,7 +38,7 @@ export function DashboardScreen() {
             </div>
             <div className="bg-white border border-gray-200 rounded p-1 text-center">
               <div className="text-secondary font-bold text-[10px]">12</div>
-              <div className="text-gray-400 text-[6px]">Bugün</div>
+              <div className="text-gray-400 text-[6px]">Bug�n</div>
             </div>
             <div className="bg-white border border-gray-200 rounded p-1 text-center">
               <div className="text-emerald-600 font-bold text-[10px]">36</div>
@@ -55,18 +55,18 @@ export function ReservationScreen() {
   return (
     <div className="w-full h-full bg-gray-50 flex flex-col text-[8px]">
       <div className="bg-primary px-3 py-1.5">
-        <span className="text-white font-bold text-[10px]">Rezervasyon Oluştur</span>
+        <span className="text-white font-bold text-[10px]">Rezervasyon Olu_tur</span>
       </div>
       <div className="flex-1 p-2 space-y-2 overflow-hidden">
         <div className="grid grid-cols-2 gap-2">
           <div className="space-y-1.5">
             <div>
               <div className="text-gray-500 mb-0.5">Kursiyer</div>
-              <div className="bg-white border border-gray-200 rounded px-1.5 py-1 text-gray-700">Ahmet Yılmaz</div>
+              <div className="bg-white border border-gray-200 rounded px-1.5 py-1 text-gray-700">Ahmet Y1lmaz</div>
             </div>
             <div>
-              <div className="text-gray-500 mb-0.5">Eğitmen</div>
-              <div className="bg-white border border-gray-200 rounded px-1.5 py-1 text-gray-700">Mehmet Öz</div>
+              <div className="text-gray-500 mb-0.5">Eitmen</div>
+              <div className="bg-white border border-gray-200 rounded px-1.5 py-1 text-gray-700">Mehmet �z</div>
             </div>
             <div>
               <div className="text-gray-500 mb-0.5">Tarih</div>
@@ -81,7 +81,7 @@ export function ReservationScreen() {
           <div className="bg-white border border-gray-200 rounded p-1.5">
             <div className="text-center font-semibold text-gray-700 mb-1 text-[7px]">Mart 2025</div>
             <div className="grid grid-cols-7 gap-px">
-              {['P', 'S', 'Ç', 'P', 'C', 'C', 'P'].map((d) => (
+              {['P', 'S', '�', 'P', 'C', 'C', 'P'].map((d) => (
                 <div key={d} className="text-center text-[5px] text-gray-400 font-medium">{d}</div>
               ))}
               {Array.from({ length: 31 }).map((_, i) => (
@@ -101,13 +101,13 @@ export function InstructorCalendarScreen() {
   return (
     <div className="w-full h-full bg-gray-50 flex flex-col text-[8px]">
       <div className="bg-primary px-3 py-1.5 flex items-center justify-between">
-        <span className="text-white font-bold text-[10px]">Eğitmen Takvimi</span>
-        <span className="text-white/70 text-[7px]">Mehmet Öz</span>
+        <span className="text-white font-bold text-[10px]">Eitmen Takvimi</span>
+        <span className="text-white/70 text-[7px]">Mehmet �z</span>
       </div>
       <div className="flex-1 p-2 overflow-hidden">
         <div className="grid grid-cols-6 gap-0.5">
           <div className="text-gray-400 text-[6px]">Saat</div>
-          {['Pzt', 'Sal', 'Çar', 'Per', 'Cum'].map((d) => (
+          {['Pzt', 'Sal', '�ar', 'Per', 'Cum'].map((d) => (
             <div key={d} className="text-center text-gray-500 font-medium text-[6px]">{d}</div>
           ))}
           {['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00'].map((time, row) => (
@@ -132,11 +132,11 @@ export function InstructorCalendarScreen() {
 
 export function StudentListScreen() {
   const students = [
-    { name: 'Ahmet Y.', phone: '0532***', instructor: 'Mehmet Ö.', remaining: 8 },
-    { name: 'Ayşe K.', phone: '0545***', instructor: 'Ali D.', remaining: 5 },
-    { name: 'Fatma S.', phone: '0555***', instructor: 'Mehmet Ö.', remaining: 12 },
+    { name: 'Ahmet Y.', phone: '0532***', instructor: 'Mehmet �.', remaining: 8 },
+    { name: 'Ay_e K.', phone: '0545***', instructor: 'Ali D.', remaining: 5 },
+    { name: 'Fatma S.', phone: '0555***', instructor: 'Mehmet �.', remaining: 12 },
     { name: 'Emre T.', phone: '0541***', instructor: 'Ali D.', remaining: 3 },
-    { name: 'Zeynep A.', phone: '0537***', instructor: 'Mehmet Ö.', remaining: 10 },
+    { name: 'Zeynep A.', phone: '0537***', instructor: 'Mehmet �.', remaining: 10 },
   ]
 
   return (
@@ -148,7 +148,7 @@ export function StudentListScreen() {
         <div className="bg-white border border-gray-200 rounded px-2 py-1 text-gray-400 text-[7px]">Kursiyer ara...</div>
         <div className="bg-white border border-gray-200 rounded overflow-hidden">
           <div className="grid grid-cols-4 gap-px bg-gray-100 px-1.5 py-1 text-[6px] font-semibold text-gray-500">
-            <span>Ad</span><span>Telefon</span><span>Eğitmen</span><span>Kalan</span>
+            <span>Ad</span><span>Telefon</span><span>Eitmen</span><span>Kalan</span>
           </div>
           {students.map((s) => (
             <div key={s.name} className="grid grid-cols-4 gap-px px-1.5 py-1 border-t border-gray-100 text-[7px] text-gray-600">
@@ -166,23 +166,23 @@ export function StudentListScreen() {
 
 export function InstructorMobileScreen() {
   const lessons = [
-    { time: '09:00', student: 'Ahmet Yılmaz', status: 'completed', came: true },
-    { time: '10:00', student: 'Ayşe Kaya', status: 'completed', came: false },
-    { time: '11:00', student: 'Emre Tunç', status: 'active', came: null },
-    { time: '13:00', student: 'Fatma Sarı', status: 'upcoming', came: null },
+    { time: '09:00', student: 'Ahmet Y1lmaz', status: 'completed', came: true },
+    { time: '10:00', student: 'Ay_e Kaya', status: 'completed', came: false },
+    { time: '11:00', student: 'Emre Tun�', status: 'active', came: null },
+    { time: '13:00', student: 'Fatma Sar1', status: 'upcoming', came: null },
     { time: '14:00', student: 'Zeynep Al.', status: 'upcoming', came: null },
   ]
 
   return (
     <div className="w-full h-full bg-gray-50 flex flex-col text-[7px]">
       <div className="bg-primary px-2 py-1.5 flex items-center justify-between">
-        <span className="text-white font-bold text-[9px]">Eğitmen Paneli</span>
-        <span className="text-white/70 text-[7px]">Mehmet Öz</span>
+        <span className="text-white font-bold text-[9px]">Eitmen Paneli</span>
+        <span className="text-white/70 text-[7px]">Mehmet �z</span>
       </div>
       <div className="flex-1 p-2 space-y-1.5 overflow-hidden">
         <div className="flex gap-1">
-          <div className="bg-primary text-white rounded px-1.5 py-0.5 font-semibold text-[7px]">Günlük</div>
-          <div className="bg-gray-200 text-gray-600 rounded px-1.5 py-0.5 text-[7px]">Haftalık</div>
+          <div className="bg-primary text-white rounded px-1.5 py-0.5 font-semibold text-[7px]">G�nl�k</div>
+          <div className="bg-gray-200 text-gray-600 rounded px-1.5 py-0.5 text-[7px]">Haftal1k</div>
         </div>
         <div className="text-[8px] font-semibold text-gray-700">15 Mart 2025 - Cumartesi</div>
         <div className="space-y-1">
@@ -211,7 +211,7 @@ export function InstructorMobileScreen() {
         </div>
         <div className="bg-white border border-gray-200 rounded p-1.5">
           <div className="text-[7px] font-semibold text-gray-600 mb-0.5">Ders Notu Ekle</div>
-          <div className="bg-gray-50 border border-gray-100 rounded p-1 text-[6px] text-gray-400">Not yazın...</div>
+          <div className="bg-gray-50 border border-gray-100 rounded p-1 text-[6px] text-gray-400">Not yaz1n...</div>
         </div>
       </div>
     </div>
@@ -222,24 +222,24 @@ export function StudentPortalScreen() {
   return (
     <div className="w-full h-full bg-gray-50 flex flex-col text-[7px]">
       <div className="bg-primary px-2 py-1.5">
-        <span className="text-white font-bold text-[9px]">Öğrenci Paneli</span>
+        <span className="text-white font-bold text-[9px]">�renci Paneli</span>
       </div>
       <div className="flex-1 p-2 space-y-1.5 overflow-hidden">
         <div className="bg-white border border-gray-200 rounded p-1.5">
-          <div className="text-[8px] font-semibold text-gray-700 mb-1">Ders Programım</div>
+          <div className="text-[8px] font-semibold text-gray-700 mb-1">Ders Program1m</div>
           <div className="space-y-0.5">
             {[
-              { date: '15 Mar', time: '10:00', status: 'tamamlandı' },
-              { date: '17 Mar', time: '14:00', status: 'tamamlandı' },
-              { date: '19 Mar', time: '09:00', status: 'yaklaşan' },
-              { date: '21 Mar', time: '11:00', status: 'planlandı' },
+              { date: '15 Mar', time: '10:00', status: 'tamamland1' },
+              { date: '17 Mar', time: '14:00', status: 'tamamland1' },
+              { date: '19 Mar', time: '09:00', status: 'yakla_an' },
+              { date: '21 Mar', time: '11:00', status: 'planland1' },
             ].map((d) => (
               <div key={d.date + d.time} className="flex items-center justify-between py-0.5 border-b border-gray-50 last:border-0">
                 <div className="flex gap-1.5">
                   <span className="text-gray-400">{d.date}</span>
                   <span className="text-gray-700 font-medium">{d.time}</span>
                 </div>
-                <span className={`text-[6px] px-1 py-px rounded font-semibold ${d.status === 'tamamlandı' ? 'bg-emerald-100 text-emerald-700' : d.status === 'yaklaşan' ? 'bg-primary/10 text-primary' : 'bg-gray-100 text-gray-500'}`}>
+                <span className={`text-[6px] px-1 py-px rounded font-semibold ${d.status === 'tamamland1' ? 'bg-emerald-100 text-emerald-700' : d.status === 'yakla_an' ? 'bg-primary/10 text-primary' : 'bg-gray-100 text-gray-500'}`}>
                   {d.status}
                 </span>
               </div>
@@ -247,18 +247,18 @@ export function StudentPortalScreen() {
           </div>
         </div>
         <div className="bg-white border border-gray-200 rounded p-1.5">
-          <div className="text-[8px] font-semibold text-gray-700 mb-1">Eğitmen & Araç</div>
+          <div className="text-[8px] font-semibold text-gray-700 mb-1">Eitmen & Ara�</div>
           <div className="flex items-center gap-1.5">
-            <div className="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center text-[6px] text-primary font-bold">MÖ</div>
+            <div className="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center text-[6px] text-primary font-bold">M�</div>
             <div>
-              <div className="text-gray-700 font-medium">Mehmet Öz</div>
+              <div className="text-gray-700 font-medium">Mehmet �z</div>
               <div className="text-gray-400 text-[6px]">34 ABC 123 - Toyota Yaris</div>
             </div>
           </div>
         </div>
         <div className="bg-white border border-gray-200 rounded p-1.5">
           <div className="text-[8px] font-semibold text-gray-700 mb-1">Memnuniyet Anketi</div>
-          <div className="text-[6px] text-gray-500 mb-1">Son dersinizi değerlendirin</div>
+          <div className="text-[6px] text-gray-500 mb-1">Son dersinizi deerlendirin</div>
           <div className="flex gap-0.5 mb-1">
             {[1, 2, 3, 4, 5].map((s) => (
               <div key={s} className={`w-3 h-3 rounded-full ${s <= 4 ? 'bg-yellow-400' : 'bg-gray-200'}`} />
@@ -285,35 +285,35 @@ export function SmsSettingsScreen() {
   return (
     <div className="w-full h-full bg-gray-50 flex flex-col text-[7px]">
       <div className="bg-primary px-2 py-1.5">
-        <span className="text-white font-bold text-[9px]">SMS Ayarları</span>
+        <span className="text-white font-bold text-[9px]">SMS Ayarlar1</span>
       </div>
       <div className="flex-1 p-2 space-y-1.5 overflow-hidden">
         <div className="bg-white border border-gray-200 rounded p-1.5 space-y-1">
-          <div className="font-semibold text-gray-700 text-[8px]">Hatırlatma Zamanı</div>
+          <div className="font-semibold text-gray-700 text-[8px]">Hat1rlatma Zaman1</div>
           <div className="flex gap-1">
             <div className="bg-primary/10 text-primary rounded px-1.5 py-0.5 font-semibold">1 saat</div>
             <div className="bg-gray-100 text-gray-500 rounded px-1.5 py-0.5">2 saat</div>
-            <div className="bg-gray-100 text-gray-500 rounded px-1.5 py-0.5">1 gün</div>
+            <div className="bg-gray-100 text-gray-500 rounded px-1.5 py-0.5">1 g�n</div>
           </div>
         </div>
         <div className="bg-white border border-gray-200 rounded p-1.5 space-y-1">
           <div className="font-semibold text-gray-700 text-[8px]">Mesaj Şablonu</div>
           <div className="bg-gray-50 border border-gray-100 rounded p-1 text-gray-500 text-[6px] leading-relaxed">
-            Sayın &#123;kursiyer&#125;, &#123;tarih&#125; tarihinde saat &#123;saat&#125;'de direksiyon dersiniz var.
+            Say1n &#123;kursiyer&#125;, &#123;tarih&#125; tarihinde saat &#123;saat&#125;'de direksiyon dersiniz var.
           </div>
         </div>
         <div className="bg-white border border-gray-200 rounded p-1.5 space-y-1">
           <div className="flex items-center justify-between">
-            <span className="font-semibold text-gray-700 text-[8px]">Otomatik Gönderim</span>
+            <span className="font-semibold text-gray-700 text-[8px]">Otomatik G�nderim</span>
             <div className="w-6 h-3 bg-primary rounded-full relative">
               <div className="absolute right-0.5 top-0.5 w-2 h-2 bg-white rounded-full" />
             </div>
           </div>
         </div>
         <div className="bg-white border border-gray-200 rounded p-1.5">
-          <div className="font-semibold text-gray-700 text-[8px] mb-1">Önizleme</div>
+          <div className="font-semibold text-gray-700 text-[8px] mb-1">�nizleme</div>
           <div className="bg-green-50 border border-green-200 rounded p-1 text-[6px] text-gray-600">
-            Sayın Ahmet Yılmaz, 15.03.2025 tarihinde saat 10:00'da direksiyon dersiniz var.
+            Say1n Ahmet Y1lmaz, 15.03.2025 tarihinde saat 10:00'da direksiyon dersiniz var.
           </div>
         </div>
       </div>
