@@ -137,7 +137,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="md:hidden py-3 space-y-2">
+        <div className="md:hidden py-3">
           <div className="flex items-center gap-2">
             <Link
               to="/"
@@ -153,13 +153,46 @@ export default function Navbar() {
                 className="h-8 w-auto object-contain"
               />
               <span
-                className={`text-[11px] font-semibold whitespace-nowrap truncate ${
+                className={`hidden min-[390px]:inline text-[11px] font-semibold whitespace-nowrap truncate ${
                   isDark ? 'text-sky-100' : 'text-[#123b90]'
                 }`}
               >
                 DireksiyonPlanı
               </span>
             </Link>
+
+            <div
+              className={`shrink-0 inline-flex items-center gap-1 whitespace-nowrap rounded-xl p-0.5 ${
+                isDark ? 'bg-slate-900/90' : 'bg-white/80 border border-[#1f58c7]/15'
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() => setLanguage('tr')}
+                className={`min-w-10 px-2 py-1 text-[11px] font-semibold rounded-lg transition ${
+                  language === 'tr'
+                    ? 'bg-primary text-white'
+                    : isDark
+                      ? 'text-slate-300 hover:bg-slate-800'
+                      : 'text-slate-600 hover:bg-slate-100'
+                }`}
+              >
+                TR
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage('en')}
+                className={`min-w-10 px-2 py-1 text-[11px] font-semibold rounded-lg transition ${
+                  language === 'en'
+                    ? 'bg-primary text-white'
+                    : isDark
+                      ? 'text-slate-300 hover:bg-slate-800'
+                      : 'text-slate-600 hover:bg-slate-100'
+                }`}
+              >
+                EN
+              </button>
+            </div>
 
             <button
               type="button"
@@ -186,41 +219,6 @@ export default function Navbar() {
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
-          </div>
-
-          <div className="flex justify-center">
-            <div
-              className={`inline-flex items-center gap-1 whitespace-nowrap rounded-xl p-1 ${
-                isDark ? 'bg-slate-900/90' : 'bg-white/80 border border-[#1f58c7]/15'
-              }`}
-            >
-            <button
-              type="button"
-              onClick={() => setLanguage('tr')}
-              className={`min-w-12 px-3 py-1 text-xs font-semibold rounded-lg transition ${
-                language === 'tr'
-                  ? 'bg-primary text-white'
-                  : isDark
-                    ? 'text-slate-300 hover:bg-slate-800'
-                    : 'text-slate-600 hover:bg-slate-100'
-              }`}
-            >
-              TR
-            </button>
-              <button
-                type="button"
-                onClick={() => setLanguage('en')}
-                className={`min-w-12 px-3 py-1 text-xs font-semibold rounded-lg transition ${
-                  language === 'en'
-                    ? 'bg-primary text-white'
-                    : isDark
-                      ? 'text-slate-300 hover:bg-slate-800'
-                      : 'text-slate-600 hover:bg-slate-100'
-                }`}
-              >
-                EN
-              </button>
-            </div>
           </div>
         </div>
       </div>
