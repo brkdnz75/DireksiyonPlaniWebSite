@@ -153,7 +153,7 @@ export default function Navbar() {
                 className="h-8 w-auto object-contain"
               />
               <span
-                className={`hidden min-[390px]:inline text-[11px] font-semibold whitespace-nowrap truncate ${
+                className={`min-w-0 text-[10px] min-[390px]:text-[11px] font-semibold whitespace-nowrap truncate ${
                   isDark ? 'text-sky-100' : 'text-[#123b90]'
                 }`}
               >
