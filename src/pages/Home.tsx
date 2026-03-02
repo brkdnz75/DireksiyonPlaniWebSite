@@ -65,6 +65,11 @@ export default function Home() {
           image: '/screens/hero-09-akilli-yonetim.png',
           label: 'Smart Operations',
         },
+        {
+          text: 'You can easily view the tracks students are currently practicing and the total number of tracks they complete at the end of all lessons on a single screen.',
+          image: '/screens/hero-10-kursiyer-ders-detay.png',
+          label: 'Student Lesson Detail',
+        },
       ]
     : [
         { text: 'Kursiyerlerinizi toplu olarak veya tek tek sisteme ekleyin.', image: '/screens/hero-01-kursiyer-ekleme.png', label: 'Kursiyer Ekleme' },
@@ -100,6 +105,11 @@ export default function Home() {
           image: '/screens/hero-09-akilli-yonetim.png',
           label: 'Akıllı Yönetim',
         },
+        {
+          text: 'Kursiyerlerin anlık olarak uyguladığı parkurları ve tüm dersler sonunda tamamladıkları toplam parkur sayılarını tek bir ekrandan kolayca görüntüleyebilirsiniz.',
+          image: '/screens/hero-10-kursiyer-ders-detay.png',
+          label: 'Kursiyer Ders Detay',
+        },
       ]
 
   const screenImages = {
@@ -107,6 +117,7 @@ export default function Home() {
     reservation: '/screens/rezervasyon-olusturma.png',
     instructorCalendar: '/screens/randevu-takvimi.png',
     studentList: '/screens/kursiyer-listesi.png',
+    studentLessonDetail: '/screens/kursiyer-ders-detay.png',
     instructors: '/screens/egitmenler.png',
     vehicles: '/screens/araclar.png',
     institutionSettings: '/screens/kurum-ayarlari.png',
@@ -185,6 +196,7 @@ export default function Home() {
         { variant: 'laptop', src: screenImages.reservation, alt: 'Reservation screen', label: 'Reservation Creation', fit: 'cover' },
         { variant: 'laptop', src: screenImages.instructorCalendar, alt: 'Calendar screen', label: 'Lesson Calendar', fit: 'cover' },
         { variant: 'laptop', src: screenImages.studentList, alt: 'Student list screen', label: 'Student List', fit: 'cover' },
+        { variant: 'laptop', src: screenImages.studentLessonDetail, alt: 'Student lesson detail screen', label: 'Student Lesson Detail', fit: 'cover' },
         { variant: 'laptop', src: screenImages.instructors, alt: 'Instructor screen', label: 'Instructors', fit: 'cover' },
         { variant: 'laptop', src: screenImages.vehicles, alt: 'Vehicles screen', label: 'Vehicles', fit: 'cover' },
         { variant: 'laptop', src: screenImages.institutionSettings, alt: 'Institution settings screen', label: 'Institution Settings', fit: 'cover' },
@@ -193,6 +205,7 @@ export default function Home() {
         { variant: 'laptop', src: screenImages.reservation, alt: 'Rezervasyon ekran görüntüsü', label: 'Rezervasyon Oluşturma', fit: 'cover' },
         { variant: 'laptop', src: screenImages.instructorCalendar, alt: 'Randevu takvimi ekran görüntüsü', label: 'Randevu Takvimi', fit: 'cover' },
         { variant: 'laptop', src: screenImages.studentList, alt: 'Kursiyer listesi ekran görüntüsü', label: 'Kursiyer Listesi', fit: 'cover' },
+        { variant: 'laptop', src: screenImages.studentLessonDetail, alt: 'Kursiyer ders detay ekran görüntüsü', label: 'Kursiyer Ders Detay', fit: 'cover' },
         { variant: 'laptop', src: screenImages.instructors, alt: 'Eğitmenler ekran görüntüsü', label: 'Eğitmenler', fit: 'cover' },
         { variant: 'laptop', src: screenImages.vehicles, alt: 'Araçlar ekran görüntüsü', label: 'Araçlar', fit: 'cover' },
         { variant: 'laptop', src: screenImages.institutionSettings, alt: 'Kurum ayarları ekran görüntüsü', label: 'Kurum Ayarları', fit: 'cover' },

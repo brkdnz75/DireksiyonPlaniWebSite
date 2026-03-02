@@ -83,6 +83,7 @@ export default function Contact() {
           },
         ],
         fallbackError: 'Could not connect to the server. Please try again.',
+        missingApiError: 'API endpoint not found. Check /api/demo-request deployment and environment variables.',
         unknownError: 'An error occurred.',
       }
     : {
@@ -137,6 +138,7 @@ export default function Contact() {
           },
         ],
         fallbackError: 'Sunucuya bağlanılamadı. Lütfen tekrar deneyin.',
+        missingApiError: 'API endpoint bulunamadı. /api/demo-request yayını ve ortam değişkenlerini kontrol edin.',
         unknownError: 'Bir hata oluştu.',
       }
 
@@ -163,6 +165,9 @@ export default function Contact() {
       const data = await res.json()
 
       if (!res.ok) {
+        if (res.status === 404) {
+          throw new Error(copy.missingApiError)
+        }
         throw new Error(data.error || copy.unknownError)
       }
 

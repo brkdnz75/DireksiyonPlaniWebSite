@@ -30,8 +30,14 @@ export default function Social() {
 
   const captions = language === 'en' ? postsEn : postsTr
 
+  const buildPostPreview = (index: number) => {
+    const bg = index % 2 === 0 ? '#0f3f9f' : '#2f74ef'
+    const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='${bg}'/><stop offset='100%' stop-color='#0a2f78'/></linearGradient></defs><rect width='400' height='400' fill='url(#g)'/><text x='200' y='214' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-size='42' font-weight='700'>Post ${index + 1}</text></svg>`
+    return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
+  }
+
   const instagramPosts: InstagramPost[] = captions.map((caption, index) => ({
-    image: `https://via.placeholder.com/400x400/${index % 2 === 0 ? '0891b2' : '06b6d4'}/ffffff?text=Post+${index + 1}`,
+    image: buildPostPreview(index),
     caption,
     link: 'https://www.instagram.com/direksiyonplani/',
   }))
